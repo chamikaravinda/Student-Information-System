@@ -23,7 +23,7 @@ class Show_Assignments_Component extends React.Component {
 
     componentDidMount() {
         document.title = "Assignments (My) | SLIIT";
-        axios.get('http://localhost:4030/api/assignments/all')
+        axios.get('https://stormy-coast-77416.herokuapp.com/api/assignments/all')
             .then(response => {
                 this.setState({Assignments: response.data});
             })

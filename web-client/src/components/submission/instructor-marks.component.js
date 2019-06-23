@@ -30,7 +30,7 @@ export default class InstructorMarksComponent extends Component {
 
     componentDidMount() {
 
-        axios.get("http://localhost:4030/api/submission/all")
+        axios.get("https://stormy-coast-77416.herokuapp.com/api/submission/all")
             .then(res=>{
                 console.log(res.data);
                 this.setState({

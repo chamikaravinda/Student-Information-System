@@ -35,7 +35,7 @@ export default class AllCourses extends Component {
             }
     }
 
-    axios.get('http://localhost:4030/api/courses/all')
+    axios.get('https://stormy-coast-77416.herokuapp.com/api/courses/all')
         .then(response =>{
             this.setState({courses:response.data});
             console.log(response);

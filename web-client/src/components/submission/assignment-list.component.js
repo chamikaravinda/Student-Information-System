@@ -27,7 +27,7 @@ export default class StudentAssignmentList extends Component {
 
     componentDidMount() {
 
-        axios.get("http://localhost:4030/api/assignments/all")
+        axios.get("https://stormy-coast-77416.herokuapp.com/api/assignments/all")
             .then(res=>{
                 console.log(res.data);
                 this.setState({

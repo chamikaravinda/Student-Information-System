@@ -39,7 +39,7 @@ export default class CurrentCoursesInstructor extends Component {
     componentDidMount() {
         document.title = "Current Courses";
         console.log(sessionStorage.getItem('id'));
-        axios.get('http://localhost:4030/api/courses/instructor/current/' + sessionStorage.getItem('id'))
+        axios.get('https://stormy-coast-77416.herokuapp.com/api/courses/instructor/current/' + sessionStorage.getItem('id'))
             .then(response => {
                 console.log(response);
                 this.setState({courses: response.data.courses});
@@ -54,7 +54,7 @@ export default class CurrentCoursesInstructor extends Component {
         console.log('click');
         console.log(sessionStorage.getItem('UserID'));
         console.log(e.target.id);
-        console.log('http://localhost:4000/node/course/instructor/accept/' + e.target.id + '/' + sessionStorage.getItem('UserID'));
+        console.log('https://stormy-coast-77416.herokuapp.com/node/course/instructor/accept/' + e.target.id + '/' + sessionStorage.getItem('UserID'));
 
         console.log(this.state.courses);
 
@@ -88,7 +88,7 @@ export default class CurrentCoursesInstructor extends Component {
         });
 
 
-        axios.post('http://localhost:4000/node/course/instructor/accept/' + e.target.id + '/' + sessionStorage.getItem('UserID'),course)
+        axios.post('https://stormy-coast-77416.herokuapp.com/node/course/instructor/accept/' + e.target.id + '/' + sessionStorage.getItem('UserID'),course)
             .then(response => {
                 console.log(response);
                 //this.setState({ courses: response.data.courses });

@@ -89,7 +89,7 @@ export default class SingleSubmission extends Component {
 
         e.preventDefault();
 
-        axios.delete("http://localhost:4030/api/submission/delete/"+this.props.match.params.id )
+        axios.delete("https://stormy-coast-77416.herokuapp.com/api/submission/delete/"+this.props.match.params.id )
             .then(res=>{
                 console.log(res.data);
                 swal("Deleted Successfully", "You deleted the Submission", "success")

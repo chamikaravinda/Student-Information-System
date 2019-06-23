@@ -31,7 +31,7 @@ export default class NewCoursesStudent extends Component {
     componentDidMount() {
         document.title = "New Courses";
         console.log(sessionStorage.getItem('id'));
-        axios.get('http://localhost:4030/api/courses/student/new/' + sessionStorage.getItem('id'))
+        axios.get('https://stormy-coast-77416.herokuapp.com/api/courses/student/new/' + sessionStorage.getItem('id'))
             .then(response => {
                 console.log(response);
                 this.setState({courses: response.data.courses});
@@ -61,7 +61,7 @@ export default class NewCoursesStudent extends Component {
         });
 
 
-        axios.post('http://localhost:4030/api/courses/student/join/' + e.target.id + '/' + sessionStorage.getItem('id'), course)
+        axios.post('https://stormy-coast-77416.herokuapp.com/api/courses/student/join/' + e.target.id + '/' + sessionStorage.getItem('id'), course)
             .then(response => {
                 console.log(response);
                 this.setState({courses: response.data.courses});

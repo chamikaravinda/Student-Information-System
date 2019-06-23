@@ -33,7 +33,7 @@ export default class CurrentCoursesStudent extends Component {
     componentDidMount() {
         document.title = "Current Courses";
         console.log(sessionStorage.getItem('id'));
-        axios.get('http://localhost:4030/api/courses/student/current/' + sessionStorage.getItem('id'))
+        axios.get('https://stormy-coast-77416.herokuapp.com/api/courses/student/current/' + sessionStorage.getItem('id'))
             .then(response => {
                 console.log(response);
                 this.setState({courses: response.data.courses});

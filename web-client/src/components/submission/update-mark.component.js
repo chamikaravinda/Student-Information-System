@@ -34,7 +34,7 @@ export default class UpdateMark extends Component {
 
         e.preventDefault();
 
-        axios.put("http://localhost:4030/api/submission/update/"+this.state.submission+"/"+this.state.mark )
+        axios.put("https://stormy-coast-77416.herokuapp.com/api/submission/update/"+this.state.submission+"/"+this.state.mark )
             .then(res=>{
                 console.log(res.data);
                 swal("Updated Successfully", "You updated marks successfully", "success")

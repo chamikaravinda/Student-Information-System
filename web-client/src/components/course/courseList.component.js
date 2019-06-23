@@ -24,7 +24,7 @@ export default class CourseList extends Component {
     componentDidMount() {
 
         console.log(sessionStorage.getItem('id'));
-        axios.get('http://localhost:4030/api/courses/instructor/new/' + sessionStorage.getItem('id'))
+        axios.get('https://stormy-coast-77416.herokuapp.com/api/courses/instructor/new/' + sessionStorage.getItem('id'))
             .then(response => {
 
                 console.log(response.data.courses);
@@ -39,7 +39,7 @@ export default class CourseList extends Component {
     componentDidUpdate() {
 
         console.log(sessionStorage.getItem('id'));
-        axios.get('http://localhost:4030/api/courses/instructor/new/' + sessionStorage.getItem('id'))
+        axios.get('https://stormy-coast-77416.herokuapp.com/api/courses/instructor/new/' + sessionStorage.getItem('id'))
             .then(response => {
 
                 console.log(response.data.courses);
@@ -75,7 +75,7 @@ export default class CourseList extends Component {
         });
 
 
-        axios.post('http://localhost:4030/api/courses/instructor/accept/' + e.target.id + '/' + sessionStorage.getItem('id'),course)
+        axios.post('https://stormy-coast-77416.herokuapp.com/api/courses/instructor/accept/' + e.target.id + '/' + sessionStorage.getItem('id'),course)
             .then(response => {
 
             })

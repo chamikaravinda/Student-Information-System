@@ -47,7 +47,7 @@ export default class Students extends Component {
             }
     }
 
-    axios.get('http://localhost:4030/api/users/students')
+    axios.get('https://stormy-coast-77416.herokuapp.com/api/users/students')
         .then(response =>{
             this.setState({students:response.data.students})
             console.log(response);

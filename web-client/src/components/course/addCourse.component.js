@@ -68,7 +68,7 @@ export default class addCourse extends Component {
         document.title = "Add Course";
 
 
-        axios.get('http://localhost:4030/api/users/instructors').then(response => {
+        axios.get('https://stormy-coast-77416.herokuapp.com/api/users/instructors').then(response => {
             console.log(response.data.instructors);
             this.setState({
                 instructors: response.data.instructors
@@ -98,7 +98,7 @@ export default class addCourse extends Component {
             instructors: newIns,
             students: []
         };
-        axios.post('http://localhost:4030/api/courses/addCourse', courseObj)
+        axios.post('https://stormy-coast-77416.herokuapp.com/api/courses/addCourse', courseObj)
             .then(result => {
 
                 console.log(result);

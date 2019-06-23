@@ -100,7 +100,7 @@ export default class AddInstructors extends Component {
                     password:this.state.password,
                 }
 
-                axios.post('http://localhost:4030/api/users/add', user)
+                axios.post('https://stormy-coast-77416.herokuapp.com/api/users/add', user)
                     .then(result => {
                         swal("Successful", "Account adding Successfull", "success");
                         this.props.history.push('/instructores');

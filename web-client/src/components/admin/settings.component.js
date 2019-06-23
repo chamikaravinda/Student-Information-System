@@ -47,7 +47,7 @@ export default class Settings extends Component {
             }
     }
 
-    axios.get('http://localhost:4030/api/users/admins')
+    axios.get('https://stormy-coast-77416.herokuapp.com/api/users/admins')
         .then(response =>{
             this.setState({admins:response.data.admins})
             console.log(response);

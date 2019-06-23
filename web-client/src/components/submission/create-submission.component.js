@@ -26,7 +26,7 @@ export default class StudentSubmissionComponent extends Component {
 
     componentDidMount() {
 
-            axios.get('http://localhost:4030/api/assignments/find/'+this.props.match.params.id )
+            axios.get('https://stormy-coast-77416.herokuapp.com/api/assignments/find/'+this.props.match.params.id )
                 .then(res=>{
                     this.setState({
                         subject : res.data.subject,

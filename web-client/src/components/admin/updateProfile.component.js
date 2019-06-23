@@ -36,7 +36,7 @@ export default class UpdateProfile extends Component {
             this.props.history.push('/login');
             }
 
-        axios.get('http://localhost:4030/api/users/'+this.props.match.params.id)
+        axios.get('https://stormy-coast-77416.herokuapp.com/api/users/'+this.props.match.params.id)
             .then(response=>{
                 this.setState({
                     id:response.data.id,

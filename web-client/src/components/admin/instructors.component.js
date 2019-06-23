@@ -47,7 +47,7 @@ export default class Instructors extends Component {
             }
     }
 
-    axios.get('http://localhost:4030/api/users/instructors')
+    axios.get('https://stormy-coast-77416.herokuapp.com/api/users/instructors')
         .then(response =>{
             this.setState({instructores:response.data.instructors})
             console.log(response);

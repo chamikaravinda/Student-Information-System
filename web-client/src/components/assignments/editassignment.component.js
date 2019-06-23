@@ -36,7 +36,7 @@ class Edit_Assignment_Component extends React.Component {
     }
     componentDidMount() {
         console.log(this.props.match.params.id);
-        axios.get('http://localhost:4030/api/assignments/find/'+this.props.match.params.id)
+        axios.get('https://stormy-coast-77416.herokuapp.com/api/assignments/find/'+this.props.match.params.id)
             .then(response => {
                 console.log("subject"+ response.data.subject);
                 this.setState({
@@ -58,7 +58,7 @@ class Edit_Assignment_Component extends React.Component {
     onDeleteAssignment(e){
         e.preventDefault();
 
-        axios.delete("http://localhost:4030/api/assignments/delete/"+this.props.match.params.id )
+        axios.delete("https://stormy-coast-77416.herokuapp.com/api/assignments/delete/"+this.props.match.params.id )
             .then(res=>{
                 console.log(res.data);
 
