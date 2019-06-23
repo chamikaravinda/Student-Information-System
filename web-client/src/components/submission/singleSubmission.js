@@ -31,7 +31,7 @@ export default class SingleSubmission extends Component {
 
     componentDidMount() {
 
-        axios.get('http://localhost:4030/api/submission/single/'+this.props.match.params.id )
+        axios.get('https://stormy-coast-77416.herokuapp.com/api/submission/single/'+this.props.match.params.id )
             .then(res=>{
 
                 this.setState({
@@ -42,7 +42,7 @@ export default class SingleSubmission extends Component {
                     lastTime : res.data.submitTime
                 })
 
-                axios.get('http://localhost:4030/api/assignments/find/'+res.data.assignment )
+                axios.get('https://stormy-coast-77416.herokuapp.com/api/assignments/find/'+res.data.assignment )
                     .then(newRes=>{
                         this.setState({
                             subject : newRes.data.subject,
@@ -55,7 +55,7 @@ export default class SingleSubmission extends Component {
 
                         data.append("deadLineDate",newRes.data.dueDate );
 
-                        axios.post('http://localhost:8080/courseweb/api/assignment/time',data )
+                        axios.post('https://sliit-courseweb-af.herokuapp.com/courseweb/api/assignment/time',data )
                             .then(response=>{
                                 this.setState({
                                     remaining : response.data
@@ -112,7 +112,7 @@ export default class SingleSubmission extends Component {
         data.append("userId", sessionStorage.getItem("id"));
         data.append("regNo", sessionStorage.getItem("regNo"));
 
-        axios.put("http://localhost:8080/courseweb/api/assignment/submit" , data )
+        axios.put("https://sliit-courseweb-af.herokuapp.com/courseweb/api/assignment/submit" , data )
             .then(res=>{
                 console.log(res.data);
                 swal("Update Complete", "You have sucessfully updated your assignment!", "success")

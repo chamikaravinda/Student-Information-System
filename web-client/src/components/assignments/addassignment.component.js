@@ -44,7 +44,7 @@ class Add_Assignment_Component extends React.Component {
         data.append("dueDate", this.state.dueDate);
         data.append("startDate", this.state.startDate);
 
-        const url = 'http://localhost:8081/courseweb/api/newassignment/add';
+        const url = 'https://sliit-courseweb-af.herokuapp.com/courseweb/api/newassignment/add';
         axios.post(url, data).then(res => {
             console.log(res);
         }).catch(err => {

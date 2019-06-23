@@ -16,7 +16,7 @@ const Assignment = props => (
 class Show_Assignments_Component extends React.Component {
 
     delete() {
-        axios.delete('http://localhost:8081/courseweb/api/newassignment/delete')
+        axios.delete('https://sliit-courseweb-af.herokuapp.com/courseweb/api/newassignment/delete')
             .then(console.log('Deleted'))
             .catch(err => console.log(err))
     }

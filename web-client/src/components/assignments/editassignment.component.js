@@ -82,7 +82,7 @@ class Edit_Assignment_Component extends React.Component {
         data.append("startDate", this.state.startDate);
         data.append("_id", this.props.match.params.id);
 
-        const url = 'http://localhost:8080/courseweb/api/newassignment/update';
+        const url = 'https://sliit-courseweb-af.herokuapp.com/courseweb/api/newassignment/update';
         axios.put(url, data).then(res => {
             console.log(res);
 

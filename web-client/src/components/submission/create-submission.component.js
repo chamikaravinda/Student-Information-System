@@ -39,7 +39,7 @@ export default class StudentSubmissionComponent extends Component {
 
                     data.append("deadLineDate",res.data.dueDate );
 
-                    axios.post('http://localhost:8080/courseweb/api/assignment/time',data )
+                    axios.post('https://sliit-courseweb-af.herokuapp.com/courseweb/api/assignment/time',data )
                         .then(response=>{
                             this.setState({
                                 remaining : response.data
@@ -75,7 +75,7 @@ export default class StudentSubmissionComponent extends Component {
         data.append("userId", sessionStorage.getItem("id"))
         data.append("regNo", sessionStorage.getItem("regNo"));
 
-        axios.post("http://localhost:8080/courseweb/api/assignment/submit" , data )
+        axios.post("https://sliit-courseweb-af.herokuapp.com/courseweb/api/assignment/submit" , data )
             .then(res=>{
                 console.log(res.data);
                 swal("Submission Complete", "You have sucessfully submitted your assignment!", "success");
