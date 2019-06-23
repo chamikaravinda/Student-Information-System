@@ -59,4 +59,26 @@ router.delete("/delete/:submissionId",function (req,res) {
         })
 });
 
+router.put("/update/:id/:mark" , function (req,res) {
+
+    const mark = req.params.mark;
+    const id = req.params.id;
+
+    Submission.update(
+        { _id : id },
+        {$set :
+                {
+                    mark : mark
+                }
+
+        }
+    )
+        .then(result=>{
+            res.status(200).json(result);
+        })
+        .catch(err=>{
+            res.status(500).json(err);
+        })
+})
+
 module.exports = router;

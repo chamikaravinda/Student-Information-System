@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import axios from 'axios';
 import { Link } from "react-router-dom";
+import swal from 'sweetalert';
 
 
 export default class StudentSubmissionComponent extends Component {
@@ -72,11 +73,12 @@ export default class StudentSubmissionComponent extends Component {
         data.append("mark", 0 );
         data.append("assignment", this.props.match.params.id);
         data.append("userId", sessionStorage.getItem("id"))
+        data.append("regNo", sessionStorage.getItem("regNo"));
 
         axios.post("http://localhost:8080/courseweb/api/assignment/submit" , data )
             .then(res=>{
                 console.log(res.data);
-
+                swal("Submission Complete", "You have sucessfully submitted your assignment!", "success");
                 this.props.history.push('/showSubmission/'+res.data._id);
 
             })

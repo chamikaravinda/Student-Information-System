@@ -27,6 +27,8 @@ import UpdateProfile from './components/admin/updateProfile.component';
 import StudentAssignmentList from './components/submission/assignment-list.component';
 import CreateAssignmentSubmissionComponent from './components/submission/create-submission.component';
 import SingleSubmissionComponent from './components/submission/singleSubmission';
+import InstructorMarksComponent from './components/submission/instructor-marks.component';
+import UpdateMarkComponent from './components/submission/update-mark.component';
 
 function App() {
   return (
@@ -55,6 +57,8 @@ function App() {
         <Route path="/studentAssignmentList" component = {StudentAssignmentList} />
         <Route path="/createSubmission/:id" component = {CreateAssignmentSubmissionComponent} />
         <Route path="/showSubmission/:id" component = {SingleSubmissionComponent} />
+        <Route path="/instructorAddMarks" component = {InstructorMarksComponent} />
+        <Route path="/updateMark/:marks/:id" component = {UpdateMarkComponent} />
 
       </Router>
   );

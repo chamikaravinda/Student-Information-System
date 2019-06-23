@@ -90,6 +90,9 @@ export default class Menu extends Component {
                         <li className="nav-item">
                         <Link className="nav-link py-0" to="/showinsassignments/">Modify Assignment</Link>
                         </li>
+                        <li className="nav-item">
+                            <Link className="nav-link py-0" to="/instructorAddMarks/">Add Marks</Link>
+                        </li>
                     </ul>
                     </div>
                 </nav>

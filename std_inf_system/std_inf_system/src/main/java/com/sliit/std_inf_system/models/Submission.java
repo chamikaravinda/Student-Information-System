@@ -20,6 +20,7 @@ public class Submission {
 	private double mark;
 	private ObjectId assignment;
 	private ObjectId userId;
+	private String regNo;
 	
 	
 	public String get_id() {
@@ -76,10 +77,19 @@ public class Submission {
 	public void setUserId(ObjectId userId) {
 		this.userId = userId;
 	}
+	public String getRegNo() {
+		return regNo;
+	}
+	public void setRegNo(String regNo) {
+		this.regNo = regNo;
+	}
+	
 	@Override
 	public String toString() {
 		return "Submission [_id=" + _id + ", file=" + Arrays.toString(file) + ", fileName=" + fileName + ", submitDate="
 				+ submitDate + ", submitTime=" + submitTime + ", comment=" + comment + ", mark=" + mark
-				+ ", assignment=" + assignment + ", userId=" + userId + "]";
+				+ ", assignment=" + assignment + ", userId=" + userId + ", regNo=" + regNo + "]";
 	}
+	
+	
 }

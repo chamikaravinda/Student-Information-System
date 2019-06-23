@@ -3,6 +3,7 @@ import axios from 'axios';
 import { Link } from "react-router-dom";
 import swal from 'sweetalert';
 
+
 export default class SingleSubmission extends Component {
     constructor(props) {
         super(props);
@@ -22,7 +23,9 @@ export default class SingleSubmission extends Component {
             mark : '',
             remaining : '',
             fileName : '',
-            assignmentId : ''
+            assignmentId : '',
+            lastDate : '',
+            lastTime : ''
         }
     }
 
@@ -34,7 +37,9 @@ export default class SingleSubmission extends Component {
                 this.setState({
                     comment : res.data.comment,
                     fileName : res.data.fileName,
-                    assignmentId : res.data.assignment
+                    assignmentId : res.data.assignment,
+                    lastDate : res.data.submitDate,
+                    lastTime : res.data.submitTime
                 })
 
                 axios.get('http://localhost:4030/api/assignments/find/'+res.data.assignment )
@@ -104,11 +109,13 @@ export default class SingleSubmission extends Component {
         data.append("comment", this.state.comment );
         data.append("mark", 0 );
         data.append("assignment", this.state.assignmentId);
-        data.append("userId", sessionStorage.getItem("id"))
+        data.append("userId", sessionStorage.getItem("id"));
+        data.append("regNo", sessionStorage.getItem("regNo"));
 
         axios.put("http://localhost:8080/courseweb/api/assignment/submit" , data )
             .then(res=>{
                 console.log(res.data);
+                swal("Update Complete", "You have sucessfully updated your assignment!", "success")
                 this.props.history.push('/showSubmission/'+res.data._id);
             })
             .catch(err=>{
@@ -172,6 +179,20 @@ export default class SingleSubmission extends Component {
                                 {this.state.remaining}
                             </td>
                         </tr>
+
+                        <tr>
+                            <td> Last modified Date </td>
+                            <td>
+                                {this.state.lastDate}
+                            </td>
+                        </tr>
+                        <tr>
+                            <td> Last modified Time </td>
+                            <td>
+                                {this.state.lastTime}
+                            </td>
+                        </tr>
+
                         <tr>
                             <td> Submit File </td>
 

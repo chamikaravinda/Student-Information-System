@@ -38,7 +38,8 @@ public class SubmissionController {
 			@RequestParam("comment") String comment,
 			@RequestParam("mark") double mark,
 			@RequestParam("assignment") ObjectId assignment,
-			@RequestParam("userId") ObjectId userID)
+			@RequestParam("userId") ObjectId userID,
+			@RequestParam("regNo") String regNo)
 			throws IOException {
 		
 		Submission submission = new Submission();
@@ -53,6 +54,7 @@ public class SubmissionController {
 		submission.setAssignment(new ObjectId());
 		submission.setAssignment(assignment);
 		submission.setUserId(userID);
+		submission.setRegNo(regNo);
 
 		repo.save(submission);
 
@@ -95,7 +97,8 @@ public class SubmissionController {
 			@RequestParam("comment") String comment,
 			@RequestParam("mark") double mark,
 			@RequestParam("assignment") ObjectId assignment,
-			@RequestParam("userId") ObjectId userID )
+			@RequestParam("userId") ObjectId userID,
+			@RequestParam("regNo") String regNo )
 			throws IOException {
 		
 		Submission submission = new Submission();
@@ -109,6 +112,7 @@ public class SubmissionController {
 		submission.setMark(mark);
 		submission.setAssignment(assignment);
 		submission.setUserId(userID);
+		submission.setRegNo(regNo);
 
 		repo.save(submission);
 
